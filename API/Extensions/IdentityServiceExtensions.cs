@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Services;
 using Domain;
 
 namespace API.Extensions
@@ -18,6 +19,7 @@ namespace API.Extensions
             .AddRoles<AppRol>()
             .AddEntityFrameworkStores<DataContext>();
             services.AddAuthentication();
+            services.AddScoped<TokenService>();
             return services;
         }
     }
